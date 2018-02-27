@@ -1,0 +1,12 @@
+body {
+    background-color: lightgrey;
+}
+
+.button {
+    color: green;
+    width: 100%
+}
+
+#innhold {
+    width: 100%
+}
