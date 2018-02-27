@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Forms</title>
+    <!-- <script src="login.js"></script> -->
+    <script src="android.js"></script>
+    <link rel="stylesheet" type="text/css" href="design.css">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, initials-scale=1.2" />
+    <!--<script src="android.js"></script>-->
+</head>
+<body>
+<div id="dikthtml" style="display: none">
+    <form action=>
+        <!-- listen skal kunne ta imot navn fra db-->
+        <div id="flex3">
+            <input id="searchField" type="search" placeholder="Søk etter dikt" onKeyDown="javascript: if (event.keyCode==13)showPoem(document.getElementById('searchField').value, 'innhold');">
+            <input id="searchButton" type="button" value="Søk" onclick="showPoem(document.getElementById('searchField').value, 'innhold')"><br>
+            <select id="list" size="12"></select>
+        </div>
+        <div id="flex">
+            <input type="button" class="button" value="Hent alle dikt" onclick="updateList()"><br>
+            <input type="button" class="button" value="Vis dikt" onclick="showPoem(getSelectedText('list') ,'innhold')"><br>
+            <input type="button" class="button" value="Lagre endringer" onclick="editPoem(document.getElementById('innhold').value, getSelectedText('list'))"><br>
+            <input type="button" class="button" value="Slett dikt" onclick="deleteOnePoem(getSelectedText('list'))"><br>
+            <input type="button" class="button" value="Slett alle dikt" onclick="deleteAllPoems()"><br>
+            <button type="button" class="button" onclick="document.getElementById('nyttdikt').style.display='block'">Opprett nytt dikt</button><br>
+            <input type="button" class="button" value="Logg ut" onclick="logOut()">
+        </div>
+        <div id="flex2">
+
+            <textarea name="dikt" id="innhold" rows="12"></textarea>
+            <div id="nyttdikt" style="display:none">
+                <label for="navn">Diktnavn:</label> <input id=navn type="text" name="diktnavn">
+                <input id="nytt" type="button" value="Lagre" align="right" onclick="saveNewPoem(document.getElementById('innhold').value, document.getElementById('navn').value)">
+                <input id="nytt2" type="button" value="Avbryt" onclick="document.getElementById('nyttdikt').style.display='none';document.getElementById('navn').value=''; document.getElementById('innhold').value=''">
+            </div>
+        </div>
+
+    </form>
+    <p>Logged in as: <span id="username"></span></p>
+</div>
+
+<div id="loginhtml">
+<h1>AJAX-Klient Login</h1>
+<h2>GET-Method</h2>
+<form action=""> <!--http://192.168.56.101/loginAndroid.cgi" method="get"-->
+    Brukernavn: <input id="name" type="text" name="brukernavn"><br>
+    Passord: <input id="pass" type="password" name="passord"><br>
+   <input type="button" value="logg inn" onclick="logIn(document.getElementById('name').value, document.getElementById('pass').value)">
+    <!--input type="submit" value="Logg inn"-->
+</form>
+<h2>POST-Method</h2>
+<form action="http://192.168.56.101/loginAndroid.cgi" method="post">
+    Brukernavn: <input type="text" name="brukernavn"><br>
+    Passord: <input type="password" name="passord"><br>
+    <input type="submit" value="Logg inn">
+</form>
+<!-- <a id="login" href="file:///android_asset/dikt.html" style="display:none">test</a> -->
+<p id="feil" style="display:none">feil passord</p>
+    </div>
+</body>
+</html>
