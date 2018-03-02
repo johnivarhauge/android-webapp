@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/androidWebApp.iml" filepath="$PROJECT_DIR$/androidWebApp.iml" />
-      <module fileurl="file://C:\Users\Student\Documents\GitHub\android-webapp\fungerendeApp\androidWebApp\androidWebApp.iml" filepath="C:\Users\Student\Documents\GitHub\android-webapp\fungerendeApp\androidWebApp\androidWebApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Student\Documents\GitHub\android-webapp\fungerendeApp\androidWebApp\app\app.iml" filepath="C:\Users\Student\Documents\GitHub\android-webapp\fungerendeApp\androidWebApp\app\app.iml" />
     </modules>
   </component>
 </project>
